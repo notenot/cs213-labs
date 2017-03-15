@@ -11,7 +11,7 @@ namespace PT4Tasks
             var str = GetString();
 
             var match = Regex.Match(str, @" (\w+) ");
-            Put(match.Success ? match.Groups[1].ToString() : "");
+            Put(match.Groups[1].ToString());
         }
     }
 }
