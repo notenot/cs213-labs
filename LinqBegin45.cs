@@ -31,7 +31,7 @@ namespace PT4Tasks
                 .Where(s => s.Length == l1);
             var second = GetEnumerableString()
                 .Where(s => s.Length == l2);
-            var result = first.Union(second)
+            var result = first.Concat(second)
                 .OrderByDescending(s => s);
 
             result.Put();

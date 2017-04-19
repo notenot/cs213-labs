@@ -43,12 +43,12 @@ namespace PT4Tasks
                 .GroupBy(x => x.data, (k, v) => new
                 {
                     data = k,
-                    sum_duration = v.Sum(x => x.duration)
+                    sumDuration = v.Sum(x => x.duration)
                 })
-                .OrderBy(x => x.sum_duration)
+                .OrderBy(x => x.sumDuration)
                 .ThenByDescending(x => Convert.ToInt32(x.data.Split(' ').First()))
                 .ThenBy(x => Convert.ToInt32(x.data.Split(' ').Last()))
-                .Select(x => x.sum_duration + " " + x.data);
+                .Select(x => x.sumDuration + " " + x.data);
             
             File.WriteAllLines(outFileName, result, Encoding.Default);
         }

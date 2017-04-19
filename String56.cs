@@ -12,7 +12,7 @@ namespace PT4Tasks
             var str = GetString();
 
             var matches = Regex.Split(str, @"\W").OrderBy(x => x.Length)
-                                                 .GroupBy(x => x.Length);
+                .GroupBy(x => x.Length);
             Put(matches.ElementAt(1).Last());
         }
     }

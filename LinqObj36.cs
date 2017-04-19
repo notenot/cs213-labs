@@ -37,7 +37,7 @@ namespace PT4Tasks
             var outFileName = GetString();
 
             Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US");
-            var result = File.ReadAllLines(inFileName, Encoding.Default)
+            var result = File.ReadLines(inFileName, Encoding.Default)
                 .Select(x => new
                 {
                     apartment = Convert.ToInt32(x.Split()[0]),
@@ -61,8 +61,7 @@ namespace PT4Tasks
                 .Select(x => x.owners.Aggregate("", (all, cur) => all 
                     + (all == "" ? "" : "\n")
                     + x.floor + " " + $"{cur.debt:0.00}" + " " + cur.name +  " "
-                    + cur.apartment))
-                .Show();
+                    + cur.apartment));
 
             File.WriteAllLines(outFileName, result, Encoding.Default);
         }

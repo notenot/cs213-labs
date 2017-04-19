@@ -35,7 +35,7 @@ namespace PT4Tasks
             var inFileName = GetString();
             var outFileName = GetString();
 
-            var result = File.ReadAllLines(inFileName, Encoding.Default)
+            var result = File.ReadLines(inFileName, Encoding.Default)
                 .Select(x => x.Split())
                 .Select(x => new
                 {
